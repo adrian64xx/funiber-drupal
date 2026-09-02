@@ -1,0 +1,14 @@
+_core:
+  default_config_hash: yTxtaGoohdbDOIdsYsYvL6R7FauKk-ZkR5jS-k-9K-8
+langcode: es
+uuid: e0a12345-6789-4abc-def0-123456789abc
+name: 'FUNIBER News Portal'
+mail: admin@funiber.org
+slogan: 'Portal de Noticias, Innovación y Educación Tecnológica'
+page:
+  403: ''
+  404: ''
+  front: '/node'
+admin_compact_mode: false
+weight_select_max: 100
+default_langcode: es

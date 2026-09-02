@@ -1,0 +1,22 @@
+langcode: es
+status: true
+dependencies:
+  module:
+    - funiber_tech_news
+  theme:
+    - funiber_theme
+id: funiber_tech_news_block
+theme: funiber_theme
+region: content
+weight: 0
+provider: null
+plugin: funiber_tech_news_block
+settings:
+  id: funiber_tech_news_block
+  label: 'Innovación & Tech News API'
+  label_display: '0'
+  provider: funiber_tech_news
+  block_title: 'Innovación & Tech News API'
+  items_count: 4
+  topic_tag: 'technology'
+visibility: {}

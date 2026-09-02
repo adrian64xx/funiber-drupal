@@ -1,0 +1,7 @@
+services:
+  funiber_tech_news.api_service:
+    class: Drupal\funiber_tech_news\Service\TechNewsApiService
+    arguments:
+      - '@http_client'
+      - '@cache.default'
+      - '@logger.factory'

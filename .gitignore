@@ -1,0 +1,29 @@
+# Ignore Composer dependencies and vendor directories
+/vendor/
+/web/core/
+/web/modules/contrib/
+/web/themes/contrib/
+/web/profiles/contrib/
+/web/libraries/
+
+# Ignore Drupal settings and files
+/web/sites/*/settings.local.php
+/web/sites/*/services.local.yml
+/web/sites/default/files/
+
+# Ignore environment configuration
+.env
+
+# Ignore IDE and OS files
+.DS_Store
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Ignore Docker database data
+/docker/mysql-data/
+/docker/db-data/
+
+# Ignore logs
+*.log

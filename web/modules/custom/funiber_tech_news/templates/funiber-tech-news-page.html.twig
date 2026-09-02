@@ -1,0 +1,62 @@
+{#
+/**
+ * @file
+ * Theme implementation for the full FUNIBER Tech News page (/noticias-tech).
+ */
+#}
+<div class="tech-page-container">
+  <div class="tech-page-header">
+    <div class="tech-page-badge">API REST Live Feed</div>
+    <h1 class="tech-page-title">Noticias de Innovación y Tecnología</h1>
+    <p class="tech-page-subtitle">
+      Artículos y tendencias del ecosistema tecnológico global actualizados en tiempo real y optimizados con la Caché API de Drupal 11.
+    </p>
+
+    {# Category Filter Tabs #}
+    <div class="tech-filter-tabs" role="tablist">
+      <a href="/noticias-tech?tag=technology" class="filter-tab {{ category == 'technology' ? 'is-active' : '' }}">Todos</a>
+      <a href="/noticias-tech?tag=ai" class="filter-tab {{ category == 'ai' ? 'is-active' : '' }}">Inteligencia Artificial</a>
+      <a href="/noticias-tech?tag=devops" class="filter-tab {{ category == 'devops' ? 'is-active' : '' }}">DevOps & Cloud</a>
+      <a href="/noticias-tech?tag=webdev" class="filter-tab {{ category == 'webdev' ? 'is-active' : '' }}">Desarrollo Web</a>
+      <a href="/noticias-tech?tag=security" class="filter-tab {{ category == 'security' ? 'is-active' : '' }}">Ciberseguridad</a>
+    </div>
+  </div>
+
+  {% if articles is not empty %}
+    <div class="tech-page-grid">
+      {% for article in articles %}
+        <article class="tech-page-card">
+          <div class="tech-page-card-thumb">
+            <img src="{{ article.image_url }}" alt="{{ article.title }}" loading="lazy">
+            <span class="badge badge-tech">{{ article.tags.0|default(category|capitalize) }}</span>
+          </div>
+          <div class="tech-page-card-content">
+            <div class="tech-card-meta">
+              <span>{{ article.published_date }}</span>
+              <span>•</span>
+              <span>{{ article.reading_time }}</span>
+            </div>
+            <h2 class="tech-page-card-heading">
+              <a href="{{ article.url }}" target="_blank" rel="noopener noreferrer">
+                {{ article.title }}
+              </a>
+            </h2>
+            <p class="tech-page-card-text">{{ article.description }}</p>
+            <div class="tech-page-card-footer">
+              <span class="tech-author-tag">Por {{ article.author }}</span>
+              <a href="{{ article.url }}" target="_blank" rel="noopener noreferrer" class="tech-link-external">
+                <span>Leer artículo completo</span>
+                <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+              </a>
+            </div>
+          </div>
+        </article>
+      {% endfor %}
+    </div>
+  {% else %}
+    <div class="tech-empty-state">
+      <h3>No se encontraron noticias en esta categoría</h3>
+      <p>Intenta seleccionando otra categoría o verifica tu conexión a la API.</p>
+    </div>
+  {% endif %}
+</div>

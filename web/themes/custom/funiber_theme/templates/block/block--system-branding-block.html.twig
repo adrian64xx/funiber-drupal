@@ -1,0 +1,16 @@
+{#
+/**
+ * @file
+ * Theme override for a system branding block.
+ */
+#}
+<div{{ attributes.addClass('site-branding') }}>
+  {% if site_logo %}
+    <a href="{{ path('<front>') }}" rel="home" class="site-logo">
+      <img src="{{ site_logo }}" alt="{{ 'Inicio'|t }}" />
+    </a>
+  {% endif %}
+  <a href="{{ path('<front>') }}" rel="home" class="brand-title">
+    Local <span>News</span>
+  </a>
+</div>

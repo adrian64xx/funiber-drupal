@@ -1,0 +1,132 @@
+/* ==========================================================================
+   Responsive Breakpoints & Mobile Adaptations
+   ========================================================================== */
+
+/* Tablets (max-width: 1024px) */
+@media (max-width: 1024px) {
+  .feed-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .top-stories-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .spotlight-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .academic-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .newsletter-box {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .newsletter-content p {
+    margin: 0 auto;
+  }
+
+  .newsletter-form {
+    width: 100%;
+    min-width: 0;
+  }
+}
+
+/* Mobile Devices (max-width: 768px) */
+@media (max-width: 768px) {
+  .site-top-bar {
+    display: none;
+  }
+
+  .site-header .container {
+    flex-wrap: wrap;
+    gap: var(--space-md);
+  }
+
+  .site-header-search {
+    order: 3;
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .brand-title {
+    font-size: 1.75rem;
+  }
+
+  /* Mobile Navigation Drawer */
+  .nav-mobile-toggle {
+    display: block;
+  }
+
+  .nav-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: var(--color-navy-dark);
+    flex-direction: column;
+    padding: var(--space-md);
+    box-shadow: var(--shadow-xl);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .nav-menu.is-open {
+    display: flex;
+  }
+
+  .nav-link {
+    padding: 0.75rem 1rem;
+    border-radius: var(--border-radius-sm);
+  }
+
+  /* Hero adjustments */
+  .hero-banner {
+    min-height: 340px;
+  }
+
+  .hero-content {
+    padding: var(--space-md);
+  }
+
+  .hero-title {
+    font-size: 1.35rem;
+  }
+
+  .hero-description {
+    display: none;
+  }
+
+  /* Grid collapse */
+  .top-stories-grid,
+  .spotlight-grid,
+  .academic-grid,
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .article-row-card {
+    grid-template-columns: 1fr;
+  }
+
+  .article-row-thumb {
+    height: 180px;
+  }
+
+  .footer-bottom .container {
+    flex-direction: column;
+    gap: var(--space-sm);
+    text-align: center;
+  }
+
+  .newsletter-form {
+    flex-direction: column;
+  }
+}

@@ -1,0 +1,303 @@
+/* Layout & Containers */
+.container {
+  width: 100%;
+  max-width: var(--container-max-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--space-md);
+  padding-right: var(--space-md);
+}
+
+.main-wrapper {
+  flex: 1;
+  padding-top: var(--space-xl);
+  padding-bottom: var(--space-3xl);
+}
+
+/* ==========================================================================
+   Top Header Bar
+   ========================================================================== */
+.site-top-bar {
+  background-color: var(--color-white);
+  border-bottom: 1px solid var(--color-slate-200);
+  font-size: 0.825rem;
+  color: var(--color-slate-500);
+  padding: 0.45rem 0;
+}
+
+.site-top-bar .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.top-bar-left {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  font-weight: 500;
+}
+
+.top-bar-right {
+  display: flex;
+  align-items: center;
+  gap: var(--space-lg);
+}
+
+.top-nav-links {
+  display: flex;
+  gap: var(--space-md);
+}
+
+.top-social-links {
+  display: flex;
+  gap: var(--space-sm);
+  align-items: center;
+}
+
+.top-social-links a {
+  color: var(--color-slate-400);
+  display: flex;
+  align-items: center;
+  transition: color var(--transition-fast);
+}
+
+.top-social-links a:hover {
+  color: var(--color-slate-800);
+}
+
+/* ==========================================================================
+   Main Header (Branding & Search)
+   ========================================================================== */
+.site-header {
+  background-color: var(--color-white);
+  padding: 1.25rem 0;
+  border-bottom: 1px solid var(--color-slate-200);
+}
+
+.site-header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-xl);
+}
+
+.site-branding {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.brand-title {
+  font-family: var(--font-serif);
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: var(--color-slate-900);
+  letter-spacing: -0.5px;
+  line-height: 1;
+}
+
+.brand-title span {
+  color: var(--color-primary);
+  font-family: var(--font-sans);
+  font-weight: 700;
+}
+
+.site-header-search {
+  flex: 1;
+  max-width: 480px;
+}
+
+.search-form {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.search-input {
+  width: 100%;
+  padding: 0.65rem 1rem 0.65rem 2.5rem;
+  border-radius: var(--border-radius-full);
+  border: 1px solid var(--color-slate-200);
+  background-color: var(--color-slate-50);
+  font-size: 0.9rem;
+  color: var(--color-slate-700);
+  outline: none;
+  transition: all var(--transition-fast);
+}
+
+.search-input:focus {
+  background-color: var(--color-white);
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px var(--color-primary-light);
+}
+
+.search-icon {
+  position: absolute;
+  left: 0.9rem;
+  color: var(--color-slate-400);
+  pointer-events: none;
+}
+
+.btn-subscribe {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  font-weight: 600;
+  font-size: 0.9rem;
+  padding: 0.65rem 1.4rem;
+  border-radius: var(--border-radius-sm);
+  border: none;
+  cursor: pointer;
+  transition: background-color var(--transition-fast);
+  white-space: nowrap;
+}
+
+.btn-subscribe:hover {
+  background-color: var(--color-primary-hover);
+  color: var(--color-white);
+}
+
+/* ==========================================================================
+   Primary Navigation Bar
+   ========================================================================== */
+.site-nav {
+  background-color: var(--color-navy);
+  color: var(--color-white);
+  position: sticky;
+  top: 0;
+  z-index: 99;
+  box-shadow: var(--shadow-md);
+}
+
+.site-nav .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.nav-item {
+  position: relative;
+}
+
+.nav-link {
+  display: block;
+  padding: 0.9rem 0.85rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-slate-300);
+  text-transform: capitalize;
+  transition: color var(--transition-fast), background-color var(--transition-fast);
+}
+
+.nav-link:hover, .nav-link.is-active {
+  color: var(--color-white);
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+.nav-link.is-breaking {
+  color: #F87171;
+  font-weight: 700;
+}
+
+.nav-mobile-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  padding: 0.75rem;
+  cursor: pointer;
+}
+
+/* ==========================================================================
+   Content Grid & Sidebars
+   ========================================================================== */
+.feed-layout {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: var(--space-2xl);
+  margin-top: var(--space-2xl);
+}
+
+.feed-main {
+  min-width: 0;
+}
+
+.feed-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
+}
+
+/* ==========================================================================
+   Footer Section
+   ========================================================================== */
+.site-footer {
+  background-color: var(--color-navy);
+  color: var(--color-slate-300);
+  margin-top: auto;
+}
+
+.footer-top {
+  padding: var(--space-3xl) 0 var(--space-2xl);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
+  gap: var(--space-2xl);
+}
+
+.footer-col h4 {
+  color: var(--color-white);
+  font-size: 1rem;
+  margin-bottom: var(--space-md);
+  font-weight: 600;
+}
+
+.footer-col ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.footer-col a {
+  color: var(--color-slate-400);
+  font-size: 0.875rem;
+  transition: color var(--transition-fast);
+}
+
+.footer-col a:hover {
+  color: var(--color-white);
+}
+
+.footer-bottom {
+  padding: var(--space-md) 0;
+  font-size: 0.8rem;
+  color: var(--color-slate-500);
+}
+
+.footer-bottom .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-bottom-links {
+  display: flex;
+  gap: var(--space-md);
+}
+
+.footer-bottom-links a {
+  color: var(--color-slate-400);
+}
+
+.footer-bottom-links a:hover {
+  color: var(--color-white);
+}

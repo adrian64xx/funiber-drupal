@@ -1,0 +1,71 @@
+{
+    "name": "funiber/drupal-tech-portal",
+    "description": "Portal Educativo y de Noticias Tecnológicas FUNIBER en Drupal 11",
+    "type": "project",
+    "license": "GPL-2.0-or-later",
+    "authors": [
+        {
+            "name": "Candidato Desarrollador Web Semi Senior",
+            "role": "Developer"
+        }
+    ],
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://packages.drupal.org/8"
+        }
+    ],
+    "require": {
+        "php": ">=8.3",
+        "composer/installers": "^2.0",
+        "drupal/core-composer-scaffold": "^11.0",
+        "drupal/core-recommended": "^11.0",
+        "drush/drush": "^13.0",
+        "guzzlehttp/guzzle": "^7.8",
+        "drupal/paragraphs": "^1.17",
+        "drupal/slick": "^2.10",
+        "drupal/slick_views": "^2.8"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^10.5",
+        "drupal/coder": "^8.3.24",
+        "squizlabs/php_codesniffer": "^3.9",
+        "mglaman/phpstan-drupal": "^1.2",
+        "phpstan/phpstan": "^1.10"
+    },
+    "conflict": {
+        "drupal/drupal": "*"
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true,
+    "config": {
+        "allow-plugins": {
+            "composer/installers": true,
+            "drupal/core-composer-scaffold": true,
+            "drupal/core-project-message": true,
+            "phpstan/extension-installer": true,
+            "dealerdirect/phpcodesniffer-composer-installer": true
+        },
+        "sort-packages": true
+    },
+    "extra": {
+        "drupal-scaffold": {
+            "locations": {
+                "web-root": "web/"
+            }
+        },
+        "installer-paths": {
+            "web/core": ["type:drupal-core"],
+            "web/libraries/{$name}": ["type:drupal-library"],
+            "web/modules/contrib/{$name}": ["type:drupal-module"],
+            "web/profiles/contrib/{$name}": ["type:drupal-profile"],
+            "web/themes/contrib/{$name}": ["type:drupal-theme"],
+            "web/drush/Commands/contrib/{$name}": ["type:drupal-drush"]
+        }
+    },
+    "scripts": {
+        "test": "phpunit web/modules/custom/funiber_tech_news/tests",
+        "lint": "phpcs --standard=Drupal,DrupalPractice web/modules/custom web/themes/custom",
+        "lint:fix": "phpcbf --standard=Drupal,DrupalPractice web/modules/custom web/themes/custom"
+    }
+}

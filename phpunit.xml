@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/10.5/phpunit.xsd"
+         bootstrap="vendor/autoload.php"
+         colors="true"
+         cacheDirectory=".phpunit.cache"
+         executionOrder="depends,defects"
+         beStrictAboutOutputDuringTests="true"
+         failOnRisky="true"
+         failOnWarning="true">
+    <testsuites>
+        <testsuite name="unit">
+            <directory>web/modules/custom/*/tests/src/Unit</directory>
+        </testsuite>
+        <testsuite name="kernel">
+            <directory>web/modules/custom/*/tests/src/Kernel</directory>
+        </testsuite>
+    </testsuites>
+    <source>
+        <include>
+            <directory suffix=".php">web/modules/custom/*/src</directory>
+        </include>
+        <exclude>
+            <directory>web/modules/custom/*/src/Plugin</directory>
+        </exclude>
+    </source>
+    <php>
+        <ini name="error_reporting" value="32767"/>
+        <ini name="memory_limit" value="-1"/>
+        <env name="SIMPLETEST_BASE_URL" value="http://webserver"/>
+        <env name="SIMPLETEST_DB" value="mysql://drupal:drupal_secret_pass@database:3306/drupal11"/>
+    </php>
+</phpunit>

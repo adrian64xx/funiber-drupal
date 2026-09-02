@@ -1,0 +1,7 @@
+funiber_tech_news.page:
+  path: '/noticias-tech'
+  defaults:
+    _controller: '\Drupal\funiber_tech_news\Controller\TechNewsController::content'
+    _title: 'Noticias Tecnológicas e Innovación - FUNIBER'
+  requirements:
+    _permission: 'access content'

@@ -1,0 +1,42 @@
+{#
+/**
+ * @file
+ * Theme override for Article node teaser.
+ */
+#}
+<article{{ attributes.addClass('article-row-card') }}>
+  {% if content.field_image|render %}
+    <div class="article-row-thumb">
+      {{ content.field_image }}
+    </div>
+  {% endif %}
+
+  <div class="article-row-content">
+    <div class="article-row-header">
+      {% if content.field_category|render %}
+        <span class="badge badge-tech">{{ content.field_category }}</span>
+      {% else %}
+        <span class="badge badge-tech">General</span>
+      {% endif %}
+      <span class="article-row-meta">{{ formatted_created }}</span>
+    </div>
+
+    <h3 class="article-row-title">
+      <a href="{{ url }}" rel="bookmark">{{ label }}</a>
+    </h3>
+
+    {% if content.body|render %}
+      <div class="article-row-excerpt">
+        {{ content.body }}
+      </div>
+    {% endif %}
+
+    <div class="article-row-meta">
+      {% if author_name %}
+        <span>{{ 'Por'|t }} {{ author_name }}</span>
+        <span>•</span>
+      {% endif %}
+      <span>{{ read_time|default('3 min read') }}</span>
+    </div>
+  </div>
+</article>

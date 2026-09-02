@@ -1,0 +1,10 @@
+tech-news-styles:
+  version: 1.0
+  css:
+    theme:
+      css/tech-news.css: {}
+  js:
+    js/tech-news.js: {}
+  dependencies:
+    - core/drupal
+    - core/once

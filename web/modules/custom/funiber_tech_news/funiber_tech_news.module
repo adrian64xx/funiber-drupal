@@ -1,0 +1,43 @@
+<?php
+
+/**
+ * @file
+ * Primary module hooks for FUNIBER Tech News module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function funiber_tech_news_help(string $route_name, RouteMatchInterface $route_match): string {
+  if ($route_name === 'help.page.funiber_tech_news') {
+    return '<p>' . t('Módulo para consumir y mostrar noticias tecnológicas en tiempo real desde APIs REST públicas.') . '</p>';
+  }
+  return '';
+}
+
+/**
+ * Implements hook_theme().
+ */
+function funiber_tech_news_theme(): array {
+  return [
+    'funiber_tech_news_block' => [
+      'variables' => [
+        'articles' => [],
+        'title' => NULL,
+        'tag' => NULL,
+        'view_more_url' => NULL,
+      ],
+      'template' => 'funiber-tech-news-block',
+    ],
+    'funiber_tech_news_page' => [
+      'variables' => [
+        'articles' => [],
+        'category' => NULL,
+        'total_count' => 0,
+      ],
+      'template' => 'funiber-tech-news-page',
+    ],
+  ];
+}

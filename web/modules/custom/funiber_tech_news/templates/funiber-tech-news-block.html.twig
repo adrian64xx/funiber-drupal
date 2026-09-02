@@ -1,0 +1,60 @@
+{#
+/**
+ * @file
+ * Theme implementation for the FUNIBER Tech News Block.
+ *
+ * Available variables:
+ * - articles: Array of articles normalized with:
+ *   - title, description, image_url, published_date, url, reading_time, tags, author
+ * - title: Custom block title
+ * - tag: Active category tag
+ * - view_more_url: Link to full page
+ */
+#}
+<div class="tech-news-block-container">
+  <div class="tech-news-block-header">
+    <div class="tech-news-title-wrap">
+      <span class="tech-pulse-dot"></span>
+      <h3 class="tech-news-title">{{ title|default('Noticias Tecnológicas & Innovación') }}</h3>
+    </div>
+    {% if view_more_url %}
+      <a href="{{ view_more_url }}" class="tech-news-more-link">{{ 'Ver todas'|t }} &rarr;</a>
+    {% endif %}
+  </div>
+
+  {% if articles is not empty %}
+    <div class="tech-news-grid">
+      {% for article in articles %}
+        <article class="tech-card">
+          <a href="{{ article.url }}" target="_blank" rel="noopener noreferrer" class="tech-card-media">
+            <img src="{{ article.image_url }}" alt="{{ article.title }}" loading="lazy">
+            <span class="badge badge-tech">{{ article.tags.0|default('Tech') }}</span>
+          </a>
+          <div class="tech-card-body">
+            <div class="tech-card-meta">
+              <span class="tech-date">{{ article.published_date }}</span>
+              <span class="tech-read-time">{{ article.reading_time }}</span>
+            </div>
+            <h4 class="tech-card-title">
+              <a href="{{ article.url }}" target="_blank" rel="noopener noreferrer">
+                {{ article.title }}
+              </a>
+            </h4>
+            <p class="tech-card-desc">{{ article.description }}</p>
+            <div class="tech-card-footer">
+              <span class="tech-author">{{ article.author }}</span>
+              <a href="{{ article.url }}" target="_blank" rel="noopener noreferrer" class="tech-btn-read" aria-label="Leer {{ article.title }}">
+                <span>Leer original</span>
+                <svg width="12" height="12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+              </a>
+            </div>
+          </div>
+        </article>
+      {% endfor %}
+    </div>
+  {% else %}
+    <div class="tech-news-empty">
+      <p>{{ 'No hay noticias tecnológicas disponibles en este momento.'|t }}</p>
+    </div>
+  {% endif %}
+</div>

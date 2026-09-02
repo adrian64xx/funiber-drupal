@@ -1,0 +1,29 @@
+name: 'FUNIBER News Theme'
+type: theme
+description: 'Tema personalizado profesional para el portal educativo y de noticias de innovación y tecnología FUNIBER, basado en Drupal 11.'
+package: Custom
+core_version_requirement: ^10 || ^11
+base theme: false
+
+libraries:
+  - funiber_theme/global-styling
+
+regions:
+  top_bar: 'Barra Superior'
+  header: 'Encabezado Principal'
+  primary_menu: 'Menú de Navegación Principal'
+  hero: 'Banner Principal (Hero)'
+  top_stories: 'Historias Destacadas (Top Stories)'
+  content: 'Contenido Principal'
+  sidebar: 'Barra Lateral (Sidebar)'
+  academic_programs: 'Programas Académicos'
+  category_spotlight: 'Destacados por Categoría'
+  community_highlights: 'Destacados de la Comunidad'
+  offbeat_news: 'Noticias Curiosas'
+  newsletter: 'Suscripción al Boletín'
+  video_news: 'Noticias en Video'
+  footer_col1: 'Pie de Página - Columna 1'
+  footer_col2: 'Pie de Página - Columna 2'
+  footer_col3: 'Pie de Página - Columna 3'
+  footer_col4: 'Pie de Página - Columna 4'
+  footer_bottom: 'Pie de Página - Copyright'

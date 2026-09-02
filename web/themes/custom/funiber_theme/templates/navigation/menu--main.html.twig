@@ -1,0 +1,36 @@
+{#
+/**
+ * @file
+ * Theme override to display the main navigation menu.
+ */
+#}
+{% import _self as menus %}
+
+{{ menus.menu_links(items, attributes, 0) }}
+
+{% macro menu_links(items, attributes, menu_level) %}
+  {% import _self as menus %}
+  {% if items %}
+    <ul class="nav-menu">
+      {% for item in items %}
+        {% set classes = [
+          'nav-item',
+          item.is_expanded ? 'menu-item--expanded',
+          item.is_collapsed ? 'menu-item--collapsed',
+          item.in_active_trail ? 'menu-item--active-trail',
+        ] %}
+        <li{{ item.attributes.addClass(classes) }}>
+          {% set link_classes = [
+            'nav-link',
+            item.in_active_trail ? 'is-active',
+            item.title|lower == 'breaking news' ? 'is-breaking',
+          ] %}
+          {{ link(item.title, item.url, { 'class': link_classes }) }}
+          {% if item.below %}
+            {{ menus.menu_links(item.below, attributes, menu_level + 1) }}
+          {% endif %}
+        </li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+{% endmacro %}

@@ -1,0 +1,9 @@
+name: 'FUNIBER Tech News'
+type: module
+description: 'Módulo personalizado para consumir, procesar y visualizar noticias de tecnología e innovación desde una API REST pública con soporte de caché, bloques y páginas dedicadas.'
+package: Custom
+core_version_requirement: ^10 || ^11
+configure: funiber_tech_news.settings
+
+dependencies:
+  - drupal:block
