@@ -160,7 +160,7 @@ Fiel reproducción del diseño de **Figma**:
 
 ---
 
-## 🧪 Pruebas Automatizadas (PHPUnit)
+## Pruebas Automatizadas (PHPUnit)
 
 Se incluye una suite de pruebas unitarias que evalúa el servicio `TechNewsApiService`:
 
@@ -179,7 +179,7 @@ docker compose exec -u www-data drupal vendor/bin/phpunit web/modules/custom/fun
 
 ---
 
-## 📐 Estándares de Código (PSR-12 / PHPCS)
+## Estándares de Código (PSR-12 / PHPCS)
 
 El código ha sido escrito siguiendo estrictamente los estándares **PSR-12** y las directrices de código de Drupal:
 
@@ -206,7 +206,7 @@ make lint
 
 ---
 
-## 📸 Galería y Demostración Visual
+## Galería y Demostración Visual
 
 A continuación se muestran capturas reales del portal desarrollado y en ejecución:
 
